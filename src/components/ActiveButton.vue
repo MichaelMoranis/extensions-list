@@ -1,15 +1,20 @@
-<!-- ActiveButton.vue -->
-<script setup>
-const props = defineProps({
-  modelValue: Boolean
-})
+<script setup lang="ts">
+interface Props {
+  modelValue: boolean
+}
 
-const emit = defineEmits(['update:modelValue'])
+interface Emits {
+  (e: 'update:modelValue', value: boolean): void
+}
+
+const props = defineProps<Props>()
+const emit = defineEmits<Emits>()
 
 const toggle = () => {
   emit('update:modelValue', !props.modelValue)
 }
 </script>
+
 
 <template>
   <button 

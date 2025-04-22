@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref, onMounted, computed } from "vue"
-import ActiveButton from "./ActiveButton.vue"
+import { ref, computed } from "vue"
+import ActiveButton from "./ActiveButton.vue";
 
 interface Extension {
     logo: string;
@@ -113,23 +113,14 @@ const removeExtension = (extensionName: string) => {
 
 <template>
     <div class="filter-buttons">
-        <!-- <button class="btn-action" @click="setFilter('all')" :class="{ active: currentFilter.value === 'all' }">
+        <button @click="setFilter('all')" :class="['filter-btn', { 'active': currentFilter === 'all' }]">
             Todas
         </button>
-        <button class="btn-action" @click="setFilter('active')" :class="{ active: currentFilter.value === 'active' }">
-            Ativas
-        </button>
-        <button class="btn-action" @click="setFilter('inactive')" :class="{ active: currentFilter.value === 'inactive' }">
-            Inativas
-        </button> -->
-        <button @click="setFilter('all')" :class="['filter-btn', { 'active': currentFilter.value === 'all' }]">
-            Todas
-        </button>
-        <button @click="setFilter('active')" :class="['filter-btn', { 'active': currentFilter.value === 'active' }]">
+        <button @click="setFilter('active')" :class="['filter-btn', { 'active': currentFilter === 'active' }]">
             Ativas
         </button>
         <button @click="setFilter('inactive')"
-            :class="['filter-btn', { 'active': currentFilter.value === 'inactive' }]">
+            :class="['filter-btn', { 'active': currentFilter === 'inactive' }]">
             Inativas
         </button>
     </div>
