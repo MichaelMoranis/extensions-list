@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import AreaExtensions from "./components/AreaExtensions.vue"
-import { CardData } from "@types"
-
-
 
 </script>
 
